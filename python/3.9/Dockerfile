@@ -5,8 +5,6 @@ LABEL       author="ggvick" maintainer="ggvick@ggvick.tk"
 RUN         apt update \
             && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps python3-pip \
             && useradd -m -d /home/container container
-			
-RUN         apt-get install wget
 
 USER        container
 ENV         USER=container HOME=/home/container
