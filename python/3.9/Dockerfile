@@ -1,9 +1,9 @@
 FROM        --platform=$TARGETOS/$TARGETARCH python:3.9-slim
 
-LABEL       author="ggvick" maintainer="ggvick@ggvick.tk"
+LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
-            && apt -y install python3 git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps python3-pip \
+            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps python3-pip \
             && useradd -m -d /home/container container
 
 USER        container
