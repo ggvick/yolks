@@ -4,7 +4,6 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
             && apt -y install ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python-certbot-apache nodejs npm wget python3-dev ca-certificates dnsutils tzdata nano zip tar curl build-essential python3-pip \
-			&& add-apt-repository ppa:certbot/certbot \
             && npm -g install npm@latest \
             && useradd -m -d /home/container container
 
