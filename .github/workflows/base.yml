@@ -10,12 +10,12 @@ on:
       - oses/**
 jobs:
   push:
-    name: "oses_${{ matrix.tag }}"
+    name: "debain_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        oses:
+        tag:
           - debian
     steps:
       - uses: actions/checkout@v2
@@ -34,4 +34,4 @@ jobs:
           file: ./oses/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: "ggvick/oses:latest"
+          tags: "ggvick/debian:latest"
