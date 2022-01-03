@@ -26,6 +26,16 @@ RUN          apt install -y gcc g++ libgcc1 lib32gcc-s1 libc++-dev gdb libc6 git
 RUN          update-locale lang=en_US.UTF-8 \
              && dpkg-reconfigure --frontend noninteractive locales
 			 
+#install dotnet also
+RUN         apt update -y \
+            && apt upgrade -y \
+            && apt install -y apt-transport-https wget iproute2 \
+            && wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+            && dpkg -i packages-microsoft-prod.deb \
+            && rm packages-microsoft-prod.deb \
+            && apt update -y \
+            && apt install -y aspnetcore-runtime-6.0 libgdiplus
+			 
 
 WORKDIR     /home/container
 
