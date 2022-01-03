@@ -1,8 +1,8 @@
 FROM         debian:bullseye-slim
 
-LABEL        author="Michael Parker" maintainer="parker@pterodactyl.io"
+LABEL        author="ggvick" maintainer="ggvick@ggvick.tk"
 
-LABEL        org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
+LABEL        org.opencontainers.image.source="https://github.com/ggvick/yolks"
 LABEL        org.opencontainers.image.licenses=MIT
 
 ENV          DEBIAN_FRONTEND noninteractive
@@ -26,7 +26,7 @@ RUN          apt install -y gcc g++ libgcc1 lib32gcc-s1 libc++-dev gdb libc6 git
 RUN          update-locale lang=en_US.UTF-8 \
              && dpkg-reconfigure --frontend noninteractive locales
 			 
-#install dotnet also
+# Install dotnet
 RUN         apt update -y \
             && apt upgrade -y \
             && apt install -y apt-transport-https wget iproute2 \
