@@ -2,9 +2,6 @@ FROM         debian:bullseye-slim
 
 LABEL        author="ggvick" maintainer="ggvick@ggvick.tk"
 
-LABEL        org.opencontainers.image.source="https://github.com/ggvick/yolks"
-LABEL        org.opencontainers.image.licenses=MIT
-
 ENV          DEBIAN_FRONTEND noninteractive
 
 RUN          useradd -m -d /home/container -s /bin/bash container
