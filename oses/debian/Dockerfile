@@ -31,7 +31,7 @@ RUN         apt update -y \
             && dpkg -i packages-microsoft-prod.deb \
             && rm packages-microsoft-prod.deb \
             && apt update -y \
-            && apt install -y aspnetcore-runtime-6.0 libgdiplus
+            && apt install -y aspnetcore-runtime-6.0 libgdiplus dotnet-sdk-6.0
 			 
 
 WORKDIR     /home/container
