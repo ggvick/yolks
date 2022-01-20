@@ -5,6 +5,7 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 RUN         apt update \
             && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps python3-pip \
             && useradd -m -d /home/container container
+RUN			pip install aiohttp
 
 USER        container
 ENV         USER=container HOME=/home/container
